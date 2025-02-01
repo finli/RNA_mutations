@@ -6,13 +6,11 @@ We begin with [a paper](https://pubmed.ncbi.nlm.nih.gov/31410488/) that did a GW
 We have to get a fasta file with the gene sequence for each SNP. 
 
 ## Predict structure
-Then we need to predict the secondary structure of the RNA. 
+Then we need to predict the secondary structure of the RNA. [This paper](https://arxiv.org/abs/2204.00300) predicts the structure. 
 
-RNA secondary structure prediction: https://proj.cse.cuhk.edu.hk/rnafm/#/
+They made an online version for RNA secondary structure prediction: https://proj.cse.cuhk.edu.hk/rnafm/#/
 
-
-
-https://www.kaggle.com/code/thetaiotaomacron/rna-fm/edit
+Here's a kaggle page: https://www.kaggle.com/code/thetaiotaomacron/rna-fm/edit
 
 
 
