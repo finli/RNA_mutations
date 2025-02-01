@@ -1,4 +1,6 @@
 # RNA_mutations
+### Unlocking the Power of ncRNA--Classifying Pathogenic SNPs for Next-Generation Treatments
+
 Our solution addresses the challenge of predicting and personalizing cancer treatment by focusing on non-coding RNA (ncRNA) variants. Despite the critical role of ncRNA in gene regulation and cancer pathology, it remains underexplored compared to protein and coding RNA mutations. Advancing innovation in this area is crucial for enhancing precision medicine and improving patient outcomes, particularly in breast cancer. 
 
 We leveraged deep learning to evaluate how mutations disrupt the structural integrity of ncRNA and assess their potential pathogenicity in cancer. Drawing an analogy to a “banana,” we hypothesized that mutations in specific structural regions—such as the surface or tips of the RNA may have a disproportionate impact on RNA function, just as a small change at the tip of a banana may cause a larger structural shift. Our approach utilized the pre-trained RNA-FM model to encode ncRNA sequences into a high-dimensional feature space, capturing both sequential and evolutionary information. These features serve as inputs to a predictive model trained on SNPs associated with cancer survival (ncRNA-eQTL) and neural SNPs (dbSNP) databases. 
