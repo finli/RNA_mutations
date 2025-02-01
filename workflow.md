@@ -5,6 +5,11 @@ We begin with [a paper](https://pubmed.ncbi.nlm.nih.gov/31410488/) that did a GW
 
 ## Find the sequences
 We have to get a fasta file with the gene sequence for each SNP. 
+https://www.ncbi.nlm.nih.gov/nuccore/NC_000004.12?report=fasta&from=84965616&to=85008743
+
+### DNA to RNA
+Just replace the T's with U's or
+http://biomodel.uah.es/en/lab/cybertory/analysis/trans.htm
 
 ## Predict structure
 Then we need to predict the secondary structure of the RNA. [This paper](https://arxiv.org/abs/2204.00300) predicts the structure. 
@@ -12,6 +17,10 @@ Then we need to predict the secondary structure of the RNA. [This paper](https:/
 They made an online version for RNA secondary structure prediction: https://proj.cse.cuhk.edu.hk/rnafm/#/
 
 Here's a kaggle page: https://www.kaggle.com/code/thetaiotaomacron/rna-fm/edit
+
+
+Different RNA secondary structure predictors:
+https://rna.urmc.rochester.edu/RNAstructureWeb
 
 
 
