@@ -1,8 +1,9 @@
-## Find the sequences
+## Find the cancer SNPs
 We begin with [a paper](https://pubmed.ncbi.nlm.nih.gov/31410488/) that did a GWAS on cancer patients. 
 
 [This database](http://ibi.hzau.edu.cn/ncRNA-eQTL/cis.php) has SNPs that were found in people with cancer. 
 
+## Find the sequences
 We have to get a fasta file with the gene sequence for each SNP. 
 
 ## Predict structure
