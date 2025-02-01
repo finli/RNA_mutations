@@ -20,8 +20,7 @@ Here's a kaggle page: https://www.kaggle.com/code/thetaiotaomacron/rna-fm/edit
 
 
 Different RNA secondary structure predictors:
-https://rna.urmc.rochester.edu/RNAstructureWeb
-
+http://rna.tbi.univie.ac.at//cgi-bin/RNAWebSuite/RNAfold.cgi
 
 
 ### Creating pretty pictures with AI:
