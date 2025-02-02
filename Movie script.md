@@ -20,17 +20,18 @@ Most SNPs are harmless, but some are linked to diseases like cancer. By studying
 [Visual: Animate the RNA structure, where the same mutation at the tip causes the RNA to "unfold" or "break" in a way that reveals a hidden, vulnerable site—something akin to an exposed crack or weak spot in the structure. Then something glues it together again.] 
 
 Narrator: 
-To tackle this, we used SNPs linked to cancer survival from a genome study and applied the RNA-FM deep learning model to predict non coding RNA structure. This helped us identify mutations in cancer-related SNPs and a control group of non-cancerous SNPs.
+To tackle this, we used SNPs linked to cancer survival from a genome study and applied the RNA-FM deep learning model to predict non-coding RNA structure. This helped us identify mutations in cancer-related SNPs and a control group of non-cancerous SNPs.
 
 [Visual: Show SNPs affecting ncRNA structure, leading to dysfunctional tumor suppressor genes] 
 
 Narrator: 
-Our approach doesn’t just highlight these mutations—it identifies druggable regions within ncRNA that could serve as new therapeutic targets. By uncovering these structural vulnerabilities, we open the door to personalized treatments that could transform cancer care. 
+Our approach not only highlights mutations but also identifies druggable regions in ncRNA, paving the way for personalized treatments that could transform cancer care.
 
 [Visual: Show potential druggable regions within ncRNA, highlighted as new targets for therapy] 
 
 Narrator: 
 Our early analysis has shown some promising results. We tested cancerous and non-cancerous SNPs. We found that there were more cancerous SNPs in the structural regions, indicating that the changes in those regions were more dangerous. 
+
 [show picture of table] 
 
 In the future, understanding and targeting ncRNA mutations could lead to personalized treatments for cancers, resulting in better outcomes and more precise care.
@@ -40,6 +41,6 @@ In the future, understanding and targeting ncRNA mutations could lead to persona
 Narrator (final thought): 
 
 The future of cancer treatment is unfolding, and it all begins with unraveling the mysteries of ncRNA through the groundbreaking 3D banana solution. 
-[End] 
+
 [Background fades out, end of video]
 
