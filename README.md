@@ -1,5 +1,7 @@
-# RNA_mutations
-### Unlocking the Power of ncRNA--Classifying Pathogenic SNPs for Next-Generation Treatments
+# RNA mutations
+<img src="logo.png" alt="logo" width="200"/>
+
+### Unlocking the Power of ncRNA--Classifying Pathogenic SNPs for Next-Generation Treatments 
 
 Our solution addresses the challenge of predicting and personalizing cancer treatment by focusing on non-coding RNA (ncRNA) variants. Despite the critical role of ncRNA in gene regulation and cancer pathology, it remains underexplored compared to protein and coding RNA mutations. Advancing innovation in this area is crucial for enhancing precision medicine and improving patient outcomes, particularly in breast cancer. 
 
