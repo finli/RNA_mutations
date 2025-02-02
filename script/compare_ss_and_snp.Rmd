@@ -1,0 +1,141 @@
+---
+title: "Compare secondary structure with SNPs"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+
+# Read pathogenic and common SNPs
+
+```{r}
+snp = read.csv("../result/SNP.csv")
+```
+
+# Read secondary structure features
+
+RNA Structural Annotation Using DSSR-like Labels
+To annotate each nucleotide position with a DSSR-like label, we categorize them as:
+
+Stem (S) → Paired bases in a helix (( )).
+Hairpin loop (H) → Unpaired bases enclosed by a single closing pair.
+Bulge (B) → Unpaired bases interrupting a stem on one side.
+Internal Loop (I) → Unpaired bases interrupting a stem on both sides.
+Multiloop (M) → Unpaired bases with multiple branching stems.
+Unstructured (U) → Unpaired bases not in any specific loop.
+
+```{r}
+fasta_lines <- readLines("../result/ss_features.fasta")
+
+# remove empty lines
+ind = grep("^>", fasta_lines)
+ind = ind[which(ind == lead(ind)-1)]
+fasta_lines = fasta_lines[-ind]
+
+# Variable to keep track of the current sequence
+current_sequence <- ""
+current_header <- ""
+
+# Loop through each line in the FASTA file
+ss = list()
+for (line in fasta_lines) {
+  if (grepl("^>", line)) {
+    # If it's a header line (starts with ">"), save the previous sequence (if any)
+    if (current_sequence != "") {
+      ss[[current_header]] <- current_sequence
+    }
+    # Start a new sequence
+    current_sequence <- ""
+    current_header <- sub("^>", "", line) 
+  } else {
+    # Otherwise, it's part of a sequence, so append it
+    current_sequence <- paste0(current_sequence, line)
+  }
+}
+
+# Add the last sequence
+if (current_sequence != "") {
+  ss[[current_header]] <- current_sequence
+}
+```
+
+# Annotate SNP with secondary structure
+
+```{r}
+snp$secondary_structure_label = NA
+
+for (i in seq(nrow(snp))) {
+  if (!snp$tx[i] %in% names(ss)) next
+  snp$secondary_structure_label[i] = substr(ss[[snp$tx[i]]], snp$relative_pos[i], snp$relative_pos[i])
+
+}
+```
+
+# Plot
+
+```{r}
+tem = snp %>%
+  mutate(
+    secondary_structure_label = case_when(
+      secondary_structure_label == "S" ~ "Stem",
+      secondary_structure_label == "H" ~ "Hairpin Loop",
+      secondary_structure_label == "B" ~ "Bulge",
+      secondary_structure_label == "I" ~ "Internal Loop",
+      secondary_structure_label == "M" ~ "Multiloop",
+      secondary_structure_label == "U" ~ "Unstructured"
+    ),
+    group = ifelse(group == "common", "Neutral", "Cancerous"),
+  ) %>%
+  group_by(secondary_structure_label, group) %>%
+  summarise(n = n(), 
+            .groups = "drop") %>%  # Dropping the grouping after summarising
+  na.omit() %>%
+  group_by(group) %>%
+  mutate(percentage = (n / sum(n)) * 100) %>%
+  ungroup() %>%  # Ungroup the data after percentage calculation
+  tidyr::complete(secondary_structure_label, group, fill = list(n=0, percentage = 0))
+
+pval = NULL
+for (i in unique(tem$secondary_structure_label)) {
+  test = tem %>%
+    mutate(secondary_structure_label = secondary_structure_label == i) %>%
+    group_by(secondary_structure_label, group) %>%
+    summarise(value = sum(n)) %>%
+    pull(value) %>%
+    matrix(nrow = 2) %>%
+    fisher.test()
+  pval = c(pval, test$p.value)
+}
+names(pval) = unique(tem$secondary_structure_label)
+print(pval)
+
+g = tem %>%
+  ggplot(aes(x = secondary_structure_label, y = percentage, fill = group)) +
+  geom_bar(stat = "identity", position = "dodge") +  # Use stat="identity" for summarized data
+  labs(
+    # title = "Bar Plot of SNP Counts by Secondary Structure and Group (Percentage)",
+    x = "Secondary Structure Label",
+    y = "Percentage",
+    fill = "Group"
+  ) +
+  labs(x = NULL, fill = "SNP") +
+  theme_minimal() +  # Adds a cleaner theme
+  theme(
+    axis.text.x = element_text(size = 14),  # Increase x-axis label size
+    axis.text.y = element_text(size = 14),  # Increase y-axis label size
+    axis.title.x = element_text(size = 16),  # Increase x-axis title size
+    axis.title.y = element_text(size = 16),  # Increase y-axis title size
+    legend.title = element_text(size = 16),  # Increase legend title size
+    legend.text = element_text(size = 14),  # Increase legend text size
+    plot.title = element_text(size = 18)  # Increase plot title size
+  )
+
+g
+
+ggsave(g, file = "../result/compare_ss_and_snp.jpg")
+```
+
+
