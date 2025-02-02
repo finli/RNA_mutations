@@ -42,3 +42,9 @@ Overall, our approach identifies druggable regions within ncRNA, pinpointing str
 4. Analysis and Interpretation
 
 - Compare structural changes between cancerous and neutral SNPs.
+
+
+<figure>
+  <img src="result/compare_ss_and_snp.jpg" alt="RNA and Secondary Structure" width="500"/>
+  <figcaption>Cancerous SNPs were found more frequent in structured features</figcaption>
+</figure>
