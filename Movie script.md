@@ -28,19 +28,17 @@ To better understand these mutations, we’ve turned to deep learning. We can no
 
 Narrator: 
 
-To tackle this challenge, we used SNPs linked to cancer survival that we found from a genome study. Then we used a deep machine learning model called RNA-FM. This model predicts the structure of ncRNA sequences.  We identified mutations that impact non-coding RNA, especially in cancer. 
+To tackle this challenge, we used SNPs linked to cancer survival that we found from a genome study. Then we used a deep machine learning model called RNA-FM. This model predicts the structure of ncRNA sequences.  We identified mutations that impact non-coding RNA in cancer, as well as in a control group of non-cancerous SNPs. 
 
 [Visual: Show SNPs affecting ncRNA structure, leading to dysfunctional tumor suppressor genes] 
 
 Narrator: 
-
 Our approach doesn’t just highlight these mutations—it identifies druggable regions within ncRNA that could serve as new therapeutic targets. By uncovering these structural vulnerabilities, we open the door to personalized treatments that could transform cancer care. 
 
 [Visual: Show potential druggable regions within ncRNA, highlighted as new targets for therapy] 
 
 Narrator: 
-
-Our early analysis has shown some promising results. We tested cancerous and non-cancerous SNPs. We found that there were more cancerous SNPs in the structural regions. 
+Our early analysis has shown some promising results. We tested cancerous and non-cancerous SNPs. We found that there were more cancerous SNPs in the structural regions, indicating that the changes in those regions were more dangerous. 
 [show picture of table] 
 
 In the future, understanding and targeting ncRNA mutations could lead to personalized treatments for cancers like breast cancer, resulting in better outcomes and more precise care.
