@@ -1,7 +1,9 @@
 [Opening Scene: Soft background music with visuals of a DNA helix transitioning to illustrations of RNA strands and genetic sequences] 
-Unlocking the power of non-coding RNA for next generation cancer treatment
+An average of x people are diagnosed with cancer every second. 
 
 We are team 3D banana. Ryan Quan, Andrianic Durgardian, Zoe Hu, Nasibeh Muhammadi, and Camille Porter. 
+
+Unlocking the power of non-coding RNA for next generation cancer treatment
 
 Narrator (Calm, Engaging tone): 
 
