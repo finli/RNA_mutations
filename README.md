@@ -47,11 +47,11 @@ Overall, our approach identifies druggable regions within ncRNA, pinpointing str
 
 - Exclusion Criteria:
 
-Excluded SNPs not within exons of ncRNA:
+  Excluded SNPs not within exons of ncRNA:
    - Cancerous SNPs: 79
    - Neutral SNPs: 77
 
-Excluded SNPs that failed to be processed by RNA-FM due to long transcript lengths:
+  Excluded SNPs that failed to be processed by RNA-FM due to long transcript lengths:
    - Cancerous SNPs: 39
    - Neutral SNPs: 29
 
