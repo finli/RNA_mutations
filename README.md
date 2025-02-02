@@ -39,7 +39,23 @@ Overall, our approach identifies druggable regions within ncRNA, pinpointing str
   - Multiloop (M) → Unpaired bases with multiple branching stems.
   - Unstructured (U) → Unpaired bases not in any specific loop.
 
-4. Analysis and Interpretation
+4. SNP Selection Processing
+
+- Raw SNP Data:
+  - Cancerous SNPs: 1001  
+  - Neutral SNPs: 244,044  
+
+- Exclusion Criteria:
+
+Excluded SNPs not within exons of ncRNA:
+   - Cancerous SNPs: 79
+   - Neutral SNPs: 77
+
+Excluded SNPs that failed to be processed by RNA-FM due to long transcript lengths:
+   - Cancerous SNPs: 39
+   - Neutral SNPs: 29
+
+5. Analysis and Interpretation
 
 - Compare structural changes between cancerous and neutral SNPs.
 
