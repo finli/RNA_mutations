@@ -6,7 +6,7 @@ In the fight against cancer, understanding how genetic mutations impact treatmen
 
 While much attention is given to protein-coding genes, ncRNAs play an equally vital role in gene regulation and suppression, and mutations in these regions could be key to improving cancer treatment. Our solution focuses on unlocking the power of these ncRNA variants to better predict and personalize cancer therapies. 
 
-[Visual: Show the structure of ncRNA, with emphasis on its complex, non-coding regions] 
+[Visual: Show the structure of ncRNA] 
 
 Narrator: 
 
@@ -28,13 +28,7 @@ To better understand these mutations, we’ve turned to deep learning. We can no
 
 Narrator: 
 
-To tackle this challenge, we use a pre-trained model called RNA-FM. This model predicts the structure of ncRNA sequences using deep learning algorithms. 
-
-[Visual: Transition to a visual of the RNA-FM model encoding RNA sequences into data, with the features leading into a predictive model] 
-
-Narrator: 
-
-By analyzing SNPs linked to cancer survival, along with other databases, we identify mutations that impact ncRNA, especially in cancer. For example, in breast cancer, certain SNPs in ncRNA disrupt its structure, damaging tumor-suppressing genes and potentially fueling tumor growth. 
+To tackle this challenge, we use a pre-trained model called RNA-FM. This model predicts the structure of ncRNA sequences using deep learning algorithms. By analyzing SNPs linked to cancer survival, along with other databases, we identify mutations that impact ncRNA, especially in cancer. For example, in breast cancer, certain SNPs in ncRNA disrupt its structure, damaging tumor-suppressing genes and potentially fueling tumor growth. 
 
 [Visual: Show SNPs affecting ncRNA structure, leading to dysfunctional tumor suppressor genes] 
 
