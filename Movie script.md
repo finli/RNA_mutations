@@ -40,7 +40,7 @@ Our approach doesn’t just highlight these mutations—it identifies druggable 
 
 Narrator: 
 
-Our analysis has shown some promising results 
+Our early analysis has shown some promising results. We tested cancerous and non-cancerous SNPs. We found that there were more cancerous SNPs in the internal loop. 
 [show picture of table] 
 
 In the future, understanding and targeting ncRNA mutations could guide personalized treatments for breast cancer—and beyond—leading to better outcomes and more precise care. 
@@ -49,7 +49,7 @@ In the future, understanding and targeting ncRNA mutations could guide personali
 
 Narrator (final thought): 
 
-The future of cancer treatment is here, and it starts with unlocking the mysteries of ncRNA. 
+The future of cancer treatment is here, and it starts with unlocking the mysteries of ncRNA with the 3D banana solution. 
 
 [End] 
 [Background fades out, end of video]
