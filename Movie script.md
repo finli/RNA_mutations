@@ -26,30 +26,30 @@ To better understand these mutations, we’ve turned to deep learning. We can no
 
 [Visual: Animate the RNA structure, where the same mutation at the tip causes the RNA to "unfold" or "break" in a way that reveals a hidden, vulnerable site—something akin to an exposed crack or weak spot in the structure. Then something glues it together again.] 
 
-Narrator: \
+Narrator: 
 
 To tackle this challenge, we use a pre-trained model called RNA-FM. This model predicts the structure of ncRNA sequences using deep learning algorithms. 
 
-[Visual: Transition to a visual of the RNA-FM model encoding RNA sequences into data, with the features leading into a predictive model] \
+[Visual: Transition to a visual of the RNA-FM model encoding RNA sequences into data, with the features leading into a predictive model] 
 
-Narrator: \
+Narrator: 
 
-By analyzing SNPs linked to cancer survival, along with other databases, we identify mutations that impact ncRNA, especially in cancer. For example, in breast cancer, certain SNPs in ncRNA disrupt its structure, damaging tumor-suppressing genes and potentially fueling tumor growth. \
+By analyzing SNPs linked to cancer survival, along with other databases, we identify mutations that impact ncRNA, especially in cancer. For example, in breast cancer, certain SNPs in ncRNA disrupt its structure, damaging tumor-suppressing genes and potentially fueling tumor growth. 
 
-[Visual: Show SNPs affecting ncRNA structure, leading to dysfunctional tumor suppressor genes] \
+[Visual: Show SNPs affecting ncRNA structure, leading to dysfunctional tumor suppressor genes] 
 
-Narrator: \
+Narrator: 
 
-Our approach doesn’t just highlight these mutations—it identifies druggable regions within ncRNA that could serve as new therapeutic targets. By uncovering these structural vulnerabilities, we open the door to personalized treatments that could transform cancer care. \
+Our approach doesn’t just highlight these mutations—it identifies druggable regions within ncRNA that could serve as new therapeutic targets. By uncovering these structural vulnerabilities, we open the door to personalized treatments that could transform cancer care. 
 
-[Visual: Show potential druggable regions within ncRNA, highlighted as new targets for therapy] \
+[Visual: Show potential druggable regions within ncRNA, highlighted as new targets for therapy] 
 
-Narrator: \
+Narrator: 
 
-Our analysis has shown some promising results \ 
-[show picture of table] \ 
+Our analysis has shown some promising results 
+[show picture of table] 
 
-In the future, understanding and targeting ncRNA mutations could guide personalized treatments for breast cancer—and beyond—leading to better outcomes and more precise care. \
+In the future, understanding and targeting ncRNA mutations could guide personalized treatments for breast cancer—and beyond—leading to better outcomes and more precise care. 
 
 [Closing Scene: Fade out with the message “Unlocking the Power of ncRNA for a Personalized Future in Cancer Treatment, include logo”] \
 
