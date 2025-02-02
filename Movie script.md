@@ -1,10 +1,11 @@
 [Opening Scene: Soft background music with visuals of a DNA helix transitioning to illustrations of RNA strands and genetic sequences] 
+Unlocking the power of non-coding RNA for next generation cancer treatment
+
+We are team 3D banana. Ryan Quan, Andrianic Durgardian, Zoe Hu, Nasibeh Muhammadi, and Camille Porter. 
 
 Narrator (Calm, Engaging tone): 
 
-In the fight against cancer, understanding how genetic mutations impact treatment is crucial. But there’s a hidden frontier in cancer research that’s often overlooked: non-coding RNA, or ncRNA. 
-
-While much attention is given to protein-coding genes, ncRNAs play an equally vital role in gene regulation and suppression, and mutations in these regions could be key to improving cancer treatment. Our solution focuses on unlocking the power of these ncRNA variants to better predict and personalize cancer therapies. 
+In the fight against cancer, understanding how genetic mutations impact treatment is crucial. But there’s a hidden frontier in cancer research that’s often overlooked: non-coding RNA. While much attention is given to protein-coding genes, ncRNAs play an equally vital role in gene regulation and suppression, and mutations in these regions could be key to improving cancer treatment. 
 
 [Visual: Show the structure of ncRNA] 
 
@@ -40,7 +41,7 @@ Our approach doesn’t just highlight these mutations—it identifies druggable 
 
 Narrator: 
 
-Our early analysis has shown some promising results. We tested cancerous and non-cancerous SNPs. We found that there were more cancerous SNPs in the internal loop. 
+Our early analysis has shown some promising results. We tested cancerous and non-cancerous SNPs. We found that there were more cancerous SNPs in the structural regions. 
 [show picture of table] 
 
 In the future, understanding and targeting ncRNA mutations could guide personalized treatments for breast cancer—and beyond—leading to better outcomes and more precise care. 
