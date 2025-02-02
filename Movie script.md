@@ -12,8 +12,7 @@ While much of cancer research has traditionally focused on protein-coding genes 
 [Visual: Show the structure of ncRNA] 
 
 Narrator: 
-
-We'll begin with SNPs, or single nucleotide polymorphisms. While most of our DNA is the same, SNPs are the small variations that make each person unique. A SNP is a tiny variation in our DNA where a single building block, called a nucleotide, is different from one person to another. For example, one person might have a ‘G’ nucleotide at a certain position in their DNA, while another person might have an ‘A’ instead. This small difference could affect how we respond to certain medicines or how likely we are to develop certain diseases. 
+Let’s dive into the building blocks of our DNA, starting with SNPs, or single nucleotide polymorphisms. While most of our DNA is shared across all humans, SNPs are the small variations that make each person unique. Essentially, a SNP is a single change in the DNA code, where one nucleotide differs from person to person. For example, one person might have a ‘G’ at a certain spot in their DNA, while another person has an ‘A.’ These tiny differences can influence everything from how our bodies respond to medications to our risk of developing diseases.
 
 [Visual: Show a close-up of DNA with a mutation] 
  
