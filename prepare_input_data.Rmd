@@ -1,0 +1,206 @@
+---
+title: "Prepare SNP labels and transcript sequences"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+```
+
+
+# Read pathogenic / sensitive SNPs
+
+```{r}
+snp_pathogenic = read.csv("../ref data/ncRNA-eQTL/Survival-eQTLs.csv")
+
+snp_pathogenic$chr = sub("^chr(.+):.*$","\\1",snp_pathogenic$SNP.Position)
+
+snp_pathogenic$pos = sub("^chr.+:(.*)$","\\1",snp_pathogenic$SNP.Position)
+```
+
+
+# Read neutral SNPs
+
+```{r}
+snp_common = read.csv("../ref data/UCSC/snp151common_ncRNA.csv", skip = 1)
+snp_common$chrom = sub("^chr","",snp_common$chrom)
+snp_common$chromStart = snp_common$chromStart + 1
+snp_common = snp_common[snp_common$chrom %in% snp_pathogenic$chr,]
+```
+
+# Identify overlap transcripts
+
+```{r}
+library(GenomicRanges)
+library(rtracklayer)
+
+# Load GTF file (replace with your path)
+gtf <- import("../ref data/Homo_sapiens.GRCh38.113.gtf")
+gtf = gtf[gtf$gene_biotype != "protein_coding" & gtf$type == "exon",]
+gtf = gtf[order(seqnames(gtf), start(gtf)),]
+
+snp_gr_pathogenic <- GRanges(seqnames = snp_pathogenic$chr,
+                  ranges = IRanges(start = as.numeric(snp_pathogenic$pos), width = 1))
+snp_gr_pathogenic$SNP_ID = snp_pathogenic$SNP.ID
+snp_gr_pathogenic$cancer_type = snp_pathogenic$Cancer.Type
+snp_gr_common <- GRanges(seqnames = snp_common$chrom,
+                  ranges = IRanges(start = as.numeric(snp_common$chromStart), width = 1))
+snp_gr_common$SNP_ID = snp_common$name
+snp_gr_common$cancer_type = "normal"
+
+# Subset for speed
+gtf <- subsetByOverlaps(gtf, snp_gr_pathogenic)
+snp_gr_pathogenic = subsetByOverlaps(snp_gr_pathogenic, gtf)
+snp_gr_common = subsetByOverlaps(snp_gr_common, gtf)
+
+get_txs = function(chr, pos) {
+  # Convert SNP data to GRanges
+  snp_gr <- GRanges(seqnames = chr,
+                    ranges = IRanges(start = as.numeric(pos), width = 1))
+  snp_gr = subsetByOverlaps(snp_gr, gtf)
+  
+  # Find overlaps
+  #gtf_tem <- subsetByOverlaps(gtf, snp_gr)
+  
+  strands = txs = rep(NA, length(snp_gr))
+  
+  for (i in seq(length(snp_gr))) {
+    tem = subsetByOverlaps(gtf, snp_gr[i])
+    if (length(tem) == 0) next
+    
+    txs[i] = tem$transcript_id[1]
+    strands[i] = strand(tem)[1]
+  }
+  return(list(txs = txs, strands = strands))
+}
+
+
+tem = get_txs(snp_pathogenic$chr, snp_pathogenic$pos)
+snp_gr_pathogenic$tx = tem$txs
+snp_gr_pathogenic$tx_strand = tem$strands
+
+tem = get_txs(snp_common$chrom, snp_common$chromStart)
+snp_gr_common$tx = tem$txs
+snp_gr_common$tx_strand = tem$strands
+
+```
+
+# Save gtf genome annotation
+
+```{r}
+write.csv(data.frame(gtf), file = "../result/tx_coordinate.csv", row.names = F)
+```
+
+# Calculate relative distance to 5 prime end
+
+```{r}
+get_relative_pos = function(snp_gr_pathogenic) {
+  relative_pos_all = rep(NA, length(snp_gr_pathogenic))
+  for (i in seq(length(snp_gr_pathogenic))) {
+    ind = which(gtf$transcript_id == snp_gr_pathogenic$tx[i])
+  
+    strand_info = as.character(strand(gtf)[ind[1]])
+    if (strand_info == "-") ind = rev(ind)
+    starts = start(gtf)[ind]
+    ends = end(gtf)[ind]
+    
+    snp_pos = start(snp_gr_pathogenic)[i]
+    
+    relative_pos <- NA
+    cumulative_length <- 0
+    
+    for (j in seq(length(starts))) {
+      if (starts[j] <= snp_pos & ends[j] >= snp_pos) {
+        if (strand_info == "+") {
+                relative_pos <- cumulative_length + (snp_pos - starts[j] + 1)
+            } else {  # Negative strand
+                relative_pos <- cumulative_length + (ends[j] - snp_pos + 1)
+            }
+        break
+      }
+      cumulative_length <- cumulative_length + ends[j] - starts[j] + 1
+    }
+    
+    relative_pos_all[i] = relative_pos
+  }
+  
+  return(relative_pos_all)
+}
+snp_gr_pathogenic$relative_pos = get_relative_pos(snp_gr_pathogenic)
+snp_gr_common$relative_pos = get_relative_pos(snp_gr_common)
+
+```
+
+# Merge SNPs
+
+```{r}
+out_snp = rbind(
+  data.frame(snp_gr_pathogenic),
+  data.frame(snp_gr_common)
+)
+
+out_snp$group = rep(c("pathogenic", "common"), time = c(length(snp_gr_pathogenic), length(snp_gr_common)))
+out_snp$gene_id = gtf$gene_id[match(out_snp$tx, gtf$transcript_id)]
+out_snp$gene_name = gtf$gene_name[match(out_snp$tx, gtf$transcript_id)]
+
+out_snp = arrange(out_snp, seqnames, start)
+
+out_snp = dplyr::select(out_snp, seqnames, start, gene_id, gene_name, tx, tx_strand, SNP_ID, group, cancer_type, relative_pos)
+
+out_snp = out_snp[!out_snp$tx %in% out_snp$tx[out_snp$relative_pos> 5000],]
+
+table(out_snp$group)
+length(unique((out_snp$gene_id)))
+
+write.csv(out_snp, "../result/SNP.csv", row.names = F)
+```
+
+# Extract transcript sequences
+
+```{r}
+library(Biostrings)
+library(GenomicFeatures)
+library(BSgenome)
+library(BSgenome.Hsapiens.UCSC.hg38)
+```
+
+```{r}
+#txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
+genome <- BSgenome.Hsapiens.UCSC.hg38  # Load genome sequence
+
+sequences = DNAStringSet()
+
+for (transcript_id in unique(gtf$transcript_id)) {
+  ind = which(gtf$transcript_id == transcript_id)
+  if (as.character(strand(gtf)[ind[1]]) == "-") ind = rev(ind)
+  
+  tx1 <- IRanges(start = start(gtf)[ind], width = end(gtf)[ind] - start(gtf)[ind] + 1)
+  transcripts <- IRangesList(tx1=tx1)
+  
+  sequences = c(sequences, 
+                extractTranscriptSeqs(genome[[paste0("chr", as.character(seqnames(gtf)[ind[1]]))]], 
+                                      transcripts,
+                                      strand = strand(gtf)[ind[1]])
+  )
+}
+
+names(sequences) = unique(gtf$transcript_id)
+
+writeXStringSet(sequences, "../result/transcript.fasta")
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
