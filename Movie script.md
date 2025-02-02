@@ -45,12 +45,12 @@ Our analysis has shown some promising results
 
 In the future, understanding and targeting ncRNA mutations could guide personalized treatments for breast cancer—and beyond—leading to better outcomes and more precise care. 
 
-[Closing Scene: Fade out with the message “Unlocking the Power of ncRNA for a Personalized Future in Cancer Treatment, include logo”] \
+[Closing Scene: Fade out with the message “Unlocking the Power of ncRNA for a Personalized Future in Cancer Treatment, include logo”] 
 
-Narrator (final thought): \
+Narrator (final thought): 
 
-The future of cancer treatment is here, and it starts with unlocking the mysteries of ncRNA. \
+The future of cancer treatment is here, and it starts with unlocking the mysteries of ncRNA. 
 
-[End] \
+[End] 
 [Background fades out, end of video]
 
