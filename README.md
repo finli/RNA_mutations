@@ -9,7 +9,7 @@ We leveraged deep learning to evaluate how mutations disrupt the structural inte
 
 Overall, our approach identifies druggable regions within ncRNA, pinpointing structural vulnerabilities that could serve as novel therapeutic targets. In breast cancer certain SNPs in ncRNA have been identified that disrupt the secondary structure of the RNA, impairing tumor suppressor genes. These mutations may contribute to tumor progression, highlighting the potential importance of ncRNA variants in cancer treatment. This has the potential to transform personalized oncology treatment by identifying key biomarkers and guiding targeted therapeutic strategies across multiple disease types.
 
-![3abf4388-af4e-4c99-8107-7921c24f3bb5](https://github.com/user-attachments/assets/aa708a5b-f2ee-4d14-a6b1-d07a8b580658)
+<img src="https://github.com/user-attachments/assets/aa708a5b-f2ee-4d14-a6b1-d07a8b580658" alt="banana analogy" width="400"/>
 
 ### Workflow for Annotating Cancerous and Common SNPs on ncRNA Using RNA Secondary Structure Prediction
 
@@ -43,8 +43,8 @@ Overall, our approach identifies druggable regions within ncRNA, pinpointing str
 
 4. SNP Selection Processing
 
-- Raw SNP Data:
-  - Cancerous SNPs: 1001  
+- Inclusion Criteria:
+  - Cancerous SNPs: 1,001  
   - Neutral SNPs: 244,044  
 
 - Exclusion Criteria:
