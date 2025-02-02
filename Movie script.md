@@ -1,4 +1,4 @@
-[Opening Scene: Soft background music with visuals of a DNA helix transitioning to illustrations of RNA strands and genetic sequences] \ 
+[Opening Scene: Soft background music with visuals of a DNA helix transitioning to illustrations of RNA strands and genetic sequences] \
 Narrator (Calm, Engaging tone): \
 In the fight against cancer, understanding how genetic mutations impact treatment is crucial. But there’s a hidden frontier in cancer research that’s often overlooked: non-coding RNA, or ncRNA. \
 While much attention is given to protein-coding genes, ncRNAs play an equally vital role in gene regulation and suppression, and mutations in these regions could be key to improving cancer treatment. Our solution focuses on unlocking the power of these ncRNA variants to better predict and personalize cancer therapies. \
