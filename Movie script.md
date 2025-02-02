@@ -1,6 +1,6 @@
 [Opening Scene: Soft background music with visuals of a DNA helix transitioning to illustrations of RNA strands and genetic sequences] 
 
-The global cancer burden is expected to continously increase, therefore early detection of cancer is crucial for improving survival rates and minimizing the burden on health care system. 3D banana's proposal: Unlocking the power of non-coding RNA for next generation cancer treatment. 
+The global cancer burden is expected to continously increase, therefore early detection of cancer is crucial for improving survival rates and minimizing the burden on the health care system. 3D banana's proposal: Unlocking the power of non-coding RNA for next generation cancer treatment. 
 
 by  Andrianic Durgardian, Camille Porter, Nasibeh Muhammadi, Zoe Hu and Ryan Quan, could revolutionize cancer detection and treatment 
 
