@@ -8,3 +8,37 @@ We leveraged deep learning to evaluate how mutations disrupt the structural inte
 Overall, our approach identifies druggable regions within ncRNA, pinpointing structural vulnerabilities that could serve as novel therapeutic targets. In breast cancer certain SNPs in ncRNA have been identified that disrupt the secondary structure of the RNA, impairing tumor suppressor genes. These mutations may contribute to tumor progression, highlighting the potential importance of ncRNA variants in cancer treatment. This has the potential to transform personalized oncology treatment by identifying key biomarkers and guiding targeted therapeutic strategies across multiple disease types.
 
 ![3abf4388-af4e-4c99-8107-7921c24f3bb5](https://github.com/user-attachments/assets/aa708a5b-f2ee-4d14-a6b1-d07a8b580658)
+
+### Workflow for Annotating Cancerous and Common SNPs on ncRNA Using RNA Secondary Structure Prediction
+
+1. Data Collection
+
+- Cancerous SNPs: Extracted from the survival-eQTL dataset of the [ncRNA-eQTL Database](https://www.ncRNA-eQTL-database-url.com).
+
+- Neutral SNPs: Obtained from the snp151common dataset of the [dbSNP Database](https://www.ncbi.nlm.nih.gov/SNP/).
+
+- ncRNA transcript sequences: Homo sapiens version GRCh38
+
+
+2. RNA Secondary Structure Prediction
+
+- Model: Utilize the pretrained deep learning model [RNA-FM](https://github.com/ml4bio/RNA-FM) to predict RNA secondary structures. The model was trained on 23 million ncRNA sequences from 800 species.
+
+- Input: ncRNA sequences with annotated SNPs.
+
+- Output: Pair-wise binding probability.
+
+3. Feature Extraction
+
+- Extract secondary structure annotation in [DSSR-style](https://x3dna.org) labels using python-based scripts.
+
+  - Stem (S) → Paired bases in a helix (( )).
+  - Hairpin loop (H) → Unpaired bases enclosed by a single closing pair.
+  - Bulge (B) → Unpaired bases interrupting a stem on one side.
+  - Internal Loop (I) → Unpaired bases interrupting a stem on both sides.
+  - Multiloop (M) → Unpaired bases with multiple branching stems.
+  - Unstructured (U) → Unpaired bases not in any specific loop.
+
+4. Analysis and Interpretation
+
+- Compare structural changes between cancerous and neutral SNPs.
