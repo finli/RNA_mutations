@@ -1,22 +1,22 @@
 [Opening Scene: Soft background music with visuals of a DNA helix transitioning to illustrations of RNA strands and genetic sequences] 
-The global cancer burden is expected to continously increase, therefore early detection of cancer is crucial for improving survival rates and minimizing the burden on health care system. 3D banana's proposal: Unlocking the power of non-coding RNA for next generation cancer treatment
-by  Andrianic Durgardian, Camille Porter, Nasibeh Muhammadi, Zoe Hu and Ryan Quan, could revolutionize cancer detection and treatment 
 
+The global cancer burden is expected to continously increase, therefore early detection of cancer is crucial for improving survival rates and minimizing the burden on health care system. 3D banana's proposal: Unlocking the power of non-coding RNA for next generation cancer treatment. 
+
+by  Andrianic Durgardian, Camille Porter, Nasibeh Muhammadi, Zoe Hu and Ryan Quan, could revolutionize cancer detection and treatment 
 
 Narrator (Calm, Engaging tone): 
 
-While much of cancer research has traditionally focused on protein-coding genes in diagnosis and treatment, non-coding RNA (ncRNA) is gaining recognition for its critical role in gene regulation and tumor progression. ncRNAs are emerging as promising biomarkers for early cancer detection and treatment monitoring. As research in this area continues to advance, ncRNAs have the potential to become key components in improving cancer diagnostics and therapies.
+While much of cancer research has traditionally focused on protein-coding genes in diagnosis and treatment, non-coding RNA is gaining recognition for its critical role in gene regulation and tumor progression. non-coding RNA is emerging as a promising biomarkers for early cancer detection and treatment monitoring. As research in this area continues to advance, non-coding RNA has the potential to become a key component in improving cancer diagnostics and therapies.
 
 [Visual: Show the structure of ncRNA] 
 
 Narrator: 
 
-Let’s talk about SNPs, or single nucleotide polymorphisms. These are tiny changes in our DNA, where just one building block (called a nucleotide) is different between people. While most of our DNA is the same, SNPs are the small variations that make each person unique. For example, one person might have a ‘G’ nucleotide at a certain position in their DNA, while another person might have an ‘A’ instead. This small difference could affect how we respond to certain medicines or how likely we are to develop certain diseases
+We'll begin with SNPs, or single nucleotide polymorphisms. While most of our DNA is the same, SNPs are the small variations that make each person unique. A SNP is a tiny variation in our DNA where a single building block, called a nucleotide, is different from one person to another. For example, one person might have a ‘G’ nucleotide at a certain position in their DNA, while another person might have an ‘A’ instead. This small difference could affect how we respond to certain medicines or how likely we are to develop certain diseases. 
 
 [Visual: Show a close-up of DNA with a mutation] 
-
-Narrator: 
-SNPs, or single nucleotide polymorphisms, are tiny changes in our DNA where just one building block differs between individuals. While most of our DNA is the same, these small variations make us unique. For example, one person might have a ‘G’ instead of an ‘A’ at a specific point in their DNA. Most SNPs are harmless, but some are linked to diseases like cancer, through pathogenic ncRNAs. By studying these SNPs, we can better understand cancer progression and improve treatments.
+ 
+Most SNPs are harmless, but some are linked to diseases like cancer, through pathogenic ncRNAs. By studying these SNPs, we can better understand cancer progression and improve treatments.
 
 [Visual: Show an image of SNPs in a cancerous cell and their effect on gene regulation] 
 
@@ -28,7 +28,7 @@ To better understand these mutations, we’ve turned to deep learning. We can no
 
 Narrator: 
 
-To tackle this challenge, we use a pre-trained model called RNA-FM. This model predicts the structure of ncRNA sequences using deep learning algorithms. By analyzing SNPs linked to cancer survival, along with other databases, we identify mutations that impact ncRNA, especially in cancer. For example, in breast cancer, certain SNPs in ncRNA disrupt its structure, damaging tumor-suppressing genes and potentially fueling tumor growth. 
+To tackle this challenge, we used SNPs linked to cancer survival that we found from a genome study. Then we used a deep machine learning model called RNA-FM. This model predicts the structure of ncRNA sequences.  We identified mutations that impact non-coding RNA, especially in cancer. 
 
 [Visual: Show SNPs affecting ncRNA structure, leading to dysfunctional tumor suppressor genes] 
 
